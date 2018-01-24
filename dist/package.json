@@ -5,6 +5,6 @@
  "author": "Jake Rutter",
  "private": true,
  "scripts": {
-   "postinstall": "npm install express && connect-history-api-fallback"
+   "postinstall": "npm install express && npm install connect-history-api-fallback"
  }
 }
