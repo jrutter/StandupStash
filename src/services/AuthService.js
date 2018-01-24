@@ -16,7 +16,7 @@ export default class AuthService {
   auth0 = new auth0.WebAuth({
     domain: 'onerutter.auth0.com',
     clientID: '0ccWtJI4unjRAEgULYPIXS-lo5twGlYh',
-    redirectUri: 'http://localhost:8080/callback',
+    redirectUri: 'https://standup-stash.herokuapp.com/callback',
     audience: 'https://onerutter.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid profile'
