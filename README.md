@@ -1,4 +1,4 @@
-# 003
+# The Code Behind Standup Stash - http://www.standupstash.com
 
 > Day 003 Project - CSS Grid
 
