@@ -12,12 +12,13 @@ export default class AuthService {
     this.setSession = this.setSession.bind(this)
     this.logout = this.logout.bind(this)
     this.isAuthenticated = this.isAuthenticated.bind(this)
+    this.environment = process.env.NODE_ENV
   }
 
   auth0 = new auth0.WebAuth({
     domain: 'onerutter.auth0.com',
     clientID: '0ccWtJI4unjRAEgULYPIXS-lo5twGlYh',
-    redirectUri: config.auth0.redirectUri,
+    redirectUri: 'http://standupstash.com/callback',
     audience: 'https://onerutter.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid profile'
