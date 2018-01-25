@@ -1,7 +1,6 @@
 import auth0 from 'auth0-js'
 import EventEmitter from 'eventemitter3'
 import router from './../router'
-import config from '../config'
 
 export default class AuthService {
   authenticated = this.isAuthenticated()
@@ -17,8 +16,8 @@ export default class AuthService {
 
   auth0 = new auth0.WebAuth({
     domain: 'onerutter.auth0.com',
-    clientID: config.auth0.clientID,
-    redirectUri: 'http://standupstash.com/callback',
+    clientID: process.env.AUTH_CLIENT,
+    redirectUri: process.env.AUTH_REDIRECT,
     audience: 'https://onerutter.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid profile'
