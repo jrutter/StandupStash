@@ -51,6 +51,8 @@
 import axios from 'axios'
 import NavBar from '@/components/Nav'
 import moment from 'moment'
+import config from '../config'
+
 export default {
   name: 'List',
   props: ['auth', 'authenticated'],
@@ -83,7 +85,8 @@ export default {
       let self = this
       let getProfile = localStorage.getItem('userProfile')
       this.profile = JSON.parse(getProfile)
-      let labKey = 'lAsBHd1474tcG5UNO_KlBFCb5nUWEtt-'
+      let labKey = config.mlabKey
+      console.log('key', key)
       this.items = []
       let query = '{"email":'+this.profile.name+'}'
 

@@ -56,3 +56,6 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Config for Dev API keys
+src/config/development.js

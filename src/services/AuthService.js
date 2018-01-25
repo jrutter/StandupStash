@@ -1,6 +1,7 @@
 import auth0 from 'auth0-js'
 import EventEmitter from 'eventemitter3'
 import router from './../router'
+import config from '../config'
 
 export default class AuthService {
   authenticated = this.isAuthenticated()
@@ -11,12 +12,13 @@ export default class AuthService {
     this.setSession = this.setSession.bind(this)
     this.logout = this.logout.bind(this)
     this.isAuthenticated = this.isAuthenticated.bind(this)
+    this.env = process.env.NODE_ENV || 'development'
   }
 
   auth0 = new auth0.WebAuth({
     domain: 'onerutter.auth0.com',
     clientID: '0ccWtJI4unjRAEgULYPIXS-lo5twGlYh',
-    redirectUri: 'https://standup-stash.herokuapp.com/callback',
+    redirectUri: config.auth0.redirectUri,
     audience: 'https://onerutter.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid profile'
