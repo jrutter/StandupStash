@@ -1,5 +1,5 @@
 module.exports = {
-    // mlabKey: process.env.MLABKEY,
+    prodlabKey: process.env.MLABKEY,
     mlabKey: 'lAsBHd1474tcG5UNO_KlBFCb5nUWEtt-',
     auth0 : {
       redirectUri: 'http://standupstash.com/callback',
