@@ -31,7 +31,7 @@ export default class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult)
         this.getProfile(authResult)
-        router.replace('home')
+        router.replace('log')
       } else if (err) {
         router.replace('home')
         console.log(err)

@@ -10,10 +10,9 @@
 
     <div v-else-if="!authenticated">
       <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="/home">Features</a>
-        <a class="p-2 text-dark" href="/home">Support</a>
-        <a class="p-2 text-dark" href="/home">Pricing</a>
-        <a class="p-2 text-dark" @click="auth.login()">Log-in</a>
+        <a class="p-2 text-dark" href="/features">Features</a>
+        <a class="p-2 text-dark" href="/pricing">Pricing</a>
+        <a class="p-2 text-dark" href="#" @click="auth.login()">Log-in</a>
       </nav>
     </div>
 

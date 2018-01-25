@@ -5,6 +5,8 @@ import List from '@/components/List'
 import Callback from '@/components/Callback'
 import Home from '@/components/Home'
 import Profile from '@/components/Profile'
+import Pricing from '@/components/Pricing'
+import Features from '@/components/Features'
 
 Vue.use(Router)
 
@@ -27,6 +29,18 @@ export const routesArray = {
       path: '/log',
       name: 'My Stash',
       component: List,
+      meta: 'active'
+    },
+    {
+      path: '/pricing',
+      name: 'Pricing',
+      component: Pricing,
+      meta: 'active'
+    },
+    {
+      path: '/features',
+      name: 'Features',
+      component: Features,
       meta: 'active'
     },
     {
