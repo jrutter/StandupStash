@@ -102,7 +102,7 @@
 
       <footer class="text-muted">
       <div class="container">
-        <p>&copy; 2018 Standup Stash!</p>
+        <p>&copy; 2018 Standup Stash! | Created by <a href="http://www.onerutter.com">Jake Rutter</a></p>
       </div>
     </footer>
 

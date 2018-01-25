@@ -12,7 +12,7 @@
       <div class="container">
           <div id="content">
               <h1 class="display-4">Pricing</h1>
-              <p class="lead">I am still building the features for billing and setting up a team to manage multiple users, dashboards, etc. Stay Tuned!</p>
+              <p class="lead">I am still building the features for billing and setting up a team to manage multiple users, dashboards, etc. </p>
 
               <div v-if="!authenticated">
 

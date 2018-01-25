@@ -11,24 +11,19 @@
 
       <div class="container">
           <div id="content">
-              <h1>Welcome to Status Stash</h1>
+              <h1>Welcome to Standup Stash</h1>
 
-              <div v-if="authenticated">
-                  <div class="intro-grid">
-                    <div>Add your status</div>
-                    <div>See a list of past statuses</div>
-                  </div>
-              </div>
-              <div v-if="!authenticated">
-                <img src="../assets/daily_standup.png"/>
-              </div>
+
+<p>The whole team meets every day for a quick status update. We stand up to keep the meeting short.
+
+<br>That's it.</p>
 
           </div>
       </div>
 
       <footer class="text-muted">
       <div class="container">
-        <p>&copy; 2018 Standup Stash!</p>
+        <p>&copy; 2018 Standup Stash! | Created by <a href="http://www.onerutter.com">Jake Rutter</a></p>
       </div>
     </footer>
 

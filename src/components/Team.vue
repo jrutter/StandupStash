@@ -12,7 +12,7 @@
 
       <div class="container">
           <div id="content">
-              <h1>What's your current status?</h1>
+              <h1>Setup your account?</h1>
 
 
               <div v-if="!authenticated">
@@ -20,80 +20,7 @@
               </div>
 
               <div v-else-if="authenticated">
-
-
-
-
-
-                <div class="row">
-        <div class="col-md-4 order-md-2 mb-4">
-          <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Preview Status</span>
-          </h4>
-          <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <small class="text-muted">{{yesterday}}</small>
-              </div>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <small class="text-muted">{{today}}</small>
-              </div>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <small class="text-muted">{{blocker}}</small>
-              </div>
-            </li>
-
-
-          </ul>
-        </div>
-        <div class="col-md-8 order-md-1">
-
-            <div class="name">
-              <input type="hidden" v-model="name">
-            </div>
-            <div class="email">
-              <input type="hidden" v-model="email">
-            </div>
-
-
-            <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Yesterday?</span>
-            </div>
-            <textarea class="form-control" v-model="yesterday" aria-label="With textarea"></textarea>
-          </div>
-
-          <br>
-
-          <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Today?</span>
-          </div>
-          <textarea class="form-control" v-model="today" aria-label="With textarea"></textarea>
-        </div>
-
-        <br>
-
-
-        <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Blockers?</span>
-        </div>
-        <textarea class="form-control" v-model="blocker" aria-label="With textarea"></textarea>
-      </div>
-
-
-
-
-
-            <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit" v-on:click="saveStatus(event)">Add Status</button>
-        </div>
-      </div>
+                  Add team coming soon...
               </div>
 
 
@@ -102,7 +29,7 @@
 
       <footer class="text-muted">
       <div class="container">
-        <p>&copy; 2018 Standup Stash!</p>
+        <p>&copy; 2018 Standup Stash! | Created by <a href="http://www.onerutter.com">Jake Rutter</a></p>
       </div>
     </footer>
 
