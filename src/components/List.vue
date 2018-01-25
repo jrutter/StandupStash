@@ -85,6 +85,7 @@ export default {
       let self = this
       let getProfile = localStorage.getItem('userProfile')
       this.profile = JSON.parse(getProfile)
+      console.log('config', config)
       let labKey = config.mlabKey
       console.log('labKey', labKey)
       this.items = []

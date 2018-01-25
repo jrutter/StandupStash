@@ -17,7 +17,7 @@ export default class AuthService {
 
   auth0 = new auth0.WebAuth({
     domain: 'onerutter.auth0.com',
-    clientID: '0ccWtJI4unjRAEgULYPIXS-lo5twGlYh',
+    clientID: config.auth0.clientID,
     redirectUri: 'http://standupstash.com/callback',
     audience: 'https://onerutter.auth0.com/userinfo',
     responseType: 'token id_token',
