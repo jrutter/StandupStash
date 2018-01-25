@@ -2,9 +2,10 @@
 
     <div v-if="authenticated">
       <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/setup">Setup Team</a>
         <a class="p-2 text-dark" href="/add">Add Stash</a>
-        <a class="p-2 text-dark" href="/profile">Profile</a>
-        <a class="p-2 text-dark" href="/log">My Stash</a>
+        <a class="p-2 text-dark" href="/profile">My Profile</a>
+        <a class="p-2 text-dark" href="/log">Stash History</a>
       </nav>
     </div>
 

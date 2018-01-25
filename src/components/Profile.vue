@@ -13,14 +13,30 @@
           <div id="content">
               <h1>User Profile</h1>
 
-              <div v-if="authenticated">
-                <p>Name: {{profile.nickname}}</p>
-                <p>Email: {{profile.name}}</p>
-                <p><img :src="profile.picture"/></p>
+              <div class="row mb-2" v-if="authenticated">
+        <div class="col-md-12">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">{{profile.nickname}}</a>
+              </h3>
+              <div class="mb-1 text-muted">{{profile.name}}</div>
 
-                <a @click="auth.logout()">Log out</a>
+              <p class="card-text mb-auto">Team: </p>
+              <a href="#" @click="auth.logout()">Edit</a>
+              <a href="#" @click="auth.logout()">Log out</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block" :src="profile.picture" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" data-holder-rendered="true">
+          </div>
+        </div>
+        <div class="col-md-6">
 
-              </div>
+        </div>
+      </div>
+
+
+
+
               <div v-else-if="!authenticated">
                 You are not logged in! Please <a @click="auth.login()">Log In</a> to continue.
               </div>

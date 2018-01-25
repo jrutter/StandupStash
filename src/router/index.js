@@ -7,6 +7,7 @@ import Home from '@/components/Home'
 import Profile from '@/components/Profile'
 import Pricing from '@/components/Pricing'
 import Features from '@/components/Features'
+import Team from '@/components/Team'
 
 Vue.use(Router)
 
@@ -23,6 +24,12 @@ export const routesArray = {
       path: '/add',
       name: 'Add Stash',
       component: Add,
+      meta: 'active'
+    },
+    {
+      path: '/setup',
+      name: 'Team',
+      component: Team,
       meta: 'active'
     },
     {

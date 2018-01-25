@@ -20,7 +20,7 @@
                   </div>
               </div>
               <div v-if="!authenticated">
-
+                <img src="../assets/daily_standup.png"/>
               </div>
 
           </div>
