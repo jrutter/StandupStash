@@ -6,4 +6,4 @@ module.exports = {
 };
 
 
-// heroku config:set AUTH_REDIRECT=https://standup-stash.herokuapp.com/callback -a standup-stash
+// heroku config:set AUTH_REDIRECT=http://standupstash.com/callback -a standup-stash

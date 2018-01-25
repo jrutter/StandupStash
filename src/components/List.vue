@@ -86,7 +86,7 @@ export default {
       let getProfile = localStorage.getItem('userProfile')
       this.profile = JSON.parse(getProfile)
       let labKey = config.mlabKey
-      console.log('key', key)
+      console.log('labKey', labKey)
       this.items = []
       let query = '{"email":'+this.profile.name+'}'
 

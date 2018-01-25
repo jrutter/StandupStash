@@ -26,3 +26,6 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+Helpful Articles:
+* https://www.slightedgecoder.com/2017/09/09/passing-api-key-heroku-node-application/

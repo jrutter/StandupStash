@@ -12,7 +12,6 @@ export default class AuthService {
     this.setSession = this.setSession.bind(this)
     this.logout = this.logout.bind(this)
     this.isAuthenticated = this.isAuthenticated.bind(this)
-    this.env = process.env.NODE_ENV || 'development'
   }
 
   auth0 = new auth0.WebAuth({

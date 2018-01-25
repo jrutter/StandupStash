@@ -1,5 +1,6 @@
 var config = {};
 var env = process.env.NODE_ENV || 'development';
+console.log('env', env);
 if(env === 'development') {
   config = require('./config/development');
   // Setup Development Keys here for Auth0 and mLab
