@@ -22,7 +22,7 @@ export default class AuthService {
     audience: 'https://onerutter.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid profile'
-  })
+  });
 
   login () {
     this.auth0.authorize()

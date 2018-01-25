@@ -1,14 +1,14 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Add from '@/components/Add'
-import List from '@/components/List'
-import Callback from '@/components/Callback'
-import Home from '@/components/Home'
-import Profile from '@/components/Profile'
-import Pricing from '@/components/Pricing'
-import Features from '@/components/Features'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Add from '@/components/Add';
+import List from '@/components/List';
+import Callback from '@/components/Callback';
+import Home from '@/components/Home';
+import Profile from '@/components/Profile';
+import Pricing from '@/components/Pricing';
+import Features from '@/components/Features';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export const routesArray = {
   mode: 'history',
@@ -60,5 +60,5 @@ export const routesArray = {
       redirect: '/'
     }
   ]
-}
-export default new Router(routesArray)
+};
+export default new Router(routesArray);
