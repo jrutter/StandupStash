@@ -2,7 +2,7 @@
 <div>
 
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-      <h5 class="my-0 mr-md-auto font-weight-normal">Standup Stash</h5>
+    <h5 class="my-0 mr-md-auto font-weight-normal logo"><a href="/">Standup Stash</a></h5>
       <nav-bar :auth="auth"
       :authenticated="authenticated"></nav-bar>
         <a class="btn btn-outline-primary" @click="auth.login()" v-if="!authenticated">Sign up</a>
@@ -16,18 +16,35 @@
 
               <div v-if="!authenticated">
 
-                <!-- Three columns of text below the carousel -->
-        <div class="row">
-          <div class="col-lg-4">
-            <h2>Web App Checkin</h2>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Unlimited Users</h2>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <h2>Manage Teams</h2>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
+                <h4>Version 1.0.0</h4>
+                <ul>
+                    <li>Create an account using Auth0 integration</li>
+                    <li>Login via Google</li>
+                    <li>Add a daily status</li>
+                    <li>View Profile</li>
+                    <li>View All Daily Statuses in Stash History</li>
+                  </ul>
+                </li>
+
+                <hr>
+
+                <h4>Next Up</h4>
+                <ul>
+                    <li>Setup Teams</li>
+                    <ul>
+                      <li>Create a Team / Manage Team</li>
+                      <li>Invite Friends</li>
+                      <li>View Status of Team</li>
+                    </ul>
+                    <li>Filter your Stash History based on Team or Personal</li>
+                    <li>Signup Flow</li>
+                    <li>Add Pagination to History</li>
+                    <li>Change default sort on History</li>
+                    <li>Email Notificaitons</li>
+                  </ul>
+                </li>
+
+                <hr>
 
               </div>
               <div v-if="authenticated">
