@@ -1,5 +1,5 @@
 {
-  "name": "Standup Stash App",
+  "name": "003",
   "version": "1.0.0",
   "description": "Day 003 Project - CSS Grid",
   "author": "Jake Rutter <jake@onerutter.com>",
@@ -90,7 +90,7 @@
   },
   "engines": {
     "node": ">= 6.0.0",
-    "npm": ">= 3.0.0"
+    "npm": ">= 5.0.0"
   },
   "browserslist": [
     "> 1%",
