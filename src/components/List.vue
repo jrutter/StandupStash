@@ -87,17 +87,17 @@ export default {
       this.profile = JSON.parse(getProfile)
       let labKey = process.env.MLABKEY
       this.items = []
-      let query = '{"email":'+this.profile.name+'}'
 
       axios.get('https://api.mlab.com/api/1/databases/standup/collections/stash',
         {
           params: {
             apiKey: labKey,
-            q: {"email": this.profile.name}
+            q: {'email': this.profile.name}
           }
         }).then(function (response) {
           self.entries = response.data
         }).catch(function (error) {
+          console.log('error', error)
         })
     }
   }

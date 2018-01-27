@@ -50,7 +50,6 @@ export default class AuthService {
     localStorage.setItem('id_token', authResult.idToken)
     localStorage.setItem('expires_at', expiresAt)
     this.authNotifier.emit('authChange', { authenticated: true })
-
   }
 
   logout () {
@@ -73,24 +72,20 @@ export default class AuthService {
 
   getProfile (authResult) {
     // if (!this.userProfile) {
-      let accessToken = authResult.accessToken
+    let accessToken = authResult.accessToken
 
-      if (!accessToken) {
-        console.log('Access token must exist to fetch profile')
+    if (!accessToken) {
+      console.log('Access token must exist to fetch profile')
+    }
+
+    this.auth0.client.userInfo(accessToken, function (err, profile) {
+      if (profile) {
+        // let this.userProfile = profile;
+        localStorage.setItem('userProfile', JSON.stringify(profile))
+        console.log('profile', profile)
+      } else {
+        console.log('err', err)
       }
-
-      this.auth0.client.userInfo(accessToken, function (err, profile) {
-        if (profile) {
-          // let this.userProfile = profile;
-          localStorage.setItem('userProfile', JSON.stringify(profile))
-          console.log('profile', profile)
-        }
-        else {
-          console.log('err', err)
-        }
-      })
-    // } else {
-    //
-    // }
+    })
   }
 }
