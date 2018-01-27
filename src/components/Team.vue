@@ -20,7 +20,17 @@
               </div>
 
               <div v-else-if="authenticated">
-                  Add team coming soon...
+
+                <div class="card" style="margin:20px 0;">
+                  <h5 class="card-header">Setup Team</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Please pick a team name</h5>
+                    <div class="form-group">
+                      <input type="text" class="form-control" v-model="team" placeholder="Enter Team Name">
+                    </div>
+                    <a href="#" class="btn btn-primary">Save</a>
+                  </div>
+                </div>
               </div>
 
 
@@ -42,7 +52,7 @@ import axios from 'axios'
 import NavBar from '@/components/Nav'
 
 export default {
-  name: 'Add',
+  name: 'Team',
   props: ['auth', 'authenticated'],
   components: {
     NavBar
@@ -50,13 +60,7 @@ export default {
   data () {
     return {
       items: [],
-      searchResults: '',
-      name: '',
-      email: '',
-      blocker: '',
-      today: '',
-      yesterday: '',
-      profile: ''
+      team: 'hi',
     }
   },
   mounted: function () {
@@ -66,6 +70,7 @@ export default {
     loadProfile: function () {
       let getProfile = localStorage.getItem('userProfile')
       let profileObj = JSON.parse(getProfile)
+      console.log('prof', profileObj)
       this.profile = profileObj
       this.email = profileObj.name
       this.name = profileObj.nickname

@@ -86,10 +86,6 @@
         <textarea class="form-control" v-model="blocker" aria-label="With textarea"></textarea>
       </div>
 
-
-
-
-
             <hr class="mb-4">
             <button class="btn btn-primary btn-lg btn-block" type="submit" v-on:click="saveStatus(event)">Add Status</button>
         </div>
@@ -145,9 +141,9 @@ export default {
     },
     saveStatus: function () {
       var self = this
-      var apiKey = 'lAsBHd1474tcG5UNO_KlBFCb5nUWEtt-'
+      let labKey = process.env.MLABKEY
 
-      axios.post('https://api.mlab.com/api/1/databases/standup/collections/stash?apiKey=' + apiKey,
+      axios.post('https://api.mlab.com/api/1/databases/standup/collections/stash?apiKey=' + labKey,
         {
           name: self.name,
           email: self.email,
