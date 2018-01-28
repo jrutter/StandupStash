@@ -33,7 +33,7 @@ export const routesArray = {
       meta: 'active'
     },
     {
-      path: '/log',
+      path: '/log/:id',
       name: 'My Stash',
       component: List,
       meta: 'active'

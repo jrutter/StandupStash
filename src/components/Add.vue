@@ -52,12 +52,9 @@
         </div>
         <div class="col-md-8 order-md-1">
 
-            <div class="name">
               <input type="hidden" v-model="name">
-            </div>
-            <div class="email">
               <input type="hidden" v-model="email">
-            </div>
+              <input type="text" v-model="team">
 
 
             <div class="input-group">
@@ -125,7 +122,8 @@ export default {
       blocker: '',
       today: '',
       yesterday: '',
-      profile: ''
+      profile: '',
+      team: ''
     }
   },
   mounted: function () {
@@ -135,9 +133,11 @@ export default {
     loadProfile: function () {
       let getProfile = localStorage.getItem('userProfile')
       let profileObj = JSON.parse(getProfile)
+      console.log('pr', profileObj)
       this.profile = profileObj
       this.email = profileObj.name
       this.name = profileObj.nickname
+      this.team = profileObj['https://standupstash.com/team']
     },
     saveStatus: function () {
       var self = this
@@ -148,6 +148,7 @@ export default {
           name: self.name,
           email: self.email,
           today: self.today,
+          team: self.team,
           yesterday: self.yesterday,
           blocker: self.blocker,
           created_at: Date.now()

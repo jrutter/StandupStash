@@ -10,13 +10,30 @@
 
       <div class="container">
           <div id="content">
-              <h1>Status Log</h1>
+              <h1>Stash History</h1>
 
               <div v-if="!authenticated">
                 You are not logged in! Please <a @click="auth.login()">Log In</a> to continue.
               </div>
 
               <div v-else-if="authenticated">
+
+                <div class="list-filter">
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link" v-bind:class="{ active: teamActive }" href="/log/team">My Team</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" v-bind:class="{ active: userActive }" href="/log/user">Personal</a>
+                  </li>
+                </ul>
+                </div>
+
+                <template v-if="path === 'team'">
+
+                </template>
+
+
                 <div class="card-deck">
                   <div v-for="item in entries" class="card mb-4 box-shadow">
                     <div class="card-header">
@@ -28,6 +45,11 @@
                         <li><i class="fas fa-calendar-plus"></i> Today: {{item.today | capitalize }}</li>
                         <li><i class="fas fa-calendar-check"></i> Yesterday: {{item.yesterday | capitalize }}</li>
                         <li><i class="fas fa-ban"></i> Blocker: {{item.blocker}}</li>
+                        <template v-if="item.team">
+                          <li><i class="fas fa-users"></i> Team: {{item.team}}</li>
+                        </template>
+
+                        <li><i class="fas fa-user"></i> User: {{item.name}}</li>
                       </ul>
                     </div>
 
@@ -63,7 +85,11 @@ export default {
     return {
       entries: [],
       searchResults: '',
-      profile: ''
+      profile: '',
+      path: '',
+      teamActive:'',
+      userActive: ''
+
     }
   },
   filters: {
@@ -84,15 +110,28 @@ export default {
     loadItems: function () {
       let self = this
       let getProfile = localStorage.getItem('userProfile')
-      this.profile = JSON.parse(getProfile)
       let labKey = process.env.MLABKEY
-      this.items = []
+
+      this.profile = JSON.parse(getProfile)
+      let teamName = this.profile['https://standupstash.com/team']
+      let searchQ
+
+      let teamQuery = this.$route.params.id
+      self.path = teamQuery
+      if (teamQuery == 'team') {
+        searchQ = {'team': teamName}
+        self.teamActive = true;
+      }
+      else if (teamQuery == 'user') {
+        searchQ = {'email': this.profile.name}
+        self.userActive = true;
+      }
 
       axios.get('https://api.mlab.com/api/1/databases/standup/collections/stash',
         {
           params: {
             apiKey: labKey,
-            q: {'email': this.profile.name}
+            q: searchQ
           }
         }).then(function (response) {
           self.entries = response.data

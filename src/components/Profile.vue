@@ -22,7 +22,9 @@
               </h3>
               <div class="mb-1 text-muted">{{profile.name}}</div>
 
-              <p class="card-text mb-auto">Team: </p>
+
+
+              <p class="card-text mb-auto">Team: {{profile['https://standupstash.com/team']}}</p>
               <a href="#" @click="auth.logout()">Edit</a>
               <a href="#" @click="auth.logout()">Log out</a>
             </div>
@@ -59,14 +61,13 @@
 import NavBar from '@/components/Nav'
 
 export default {
-  name: 'Add',
+  name: 'Profile',
   props: ['auth', 'authenticated'],
   components: {
     NavBar
   },
   data () {
     return {
-      items: [],
       profile: ''
     }
   },

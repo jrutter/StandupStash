@@ -20,7 +20,7 @@ export default class AuthService {
     redirectUri: process.env.AUTH_REDIRECT,
     audience: 'https://onerutter.auth0.com/userinfo',
     responseType: 'token id_token',
-    scope: 'openid profile'
+    scope: 'openid profile team'
   });
 
   login () {
