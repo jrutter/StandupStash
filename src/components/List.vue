@@ -87,7 +87,7 @@ export default {
       searchResults: '',
       profile: '',
       path: '',
-      teamActive:'',
+      teamActive: '',
       userActive: ''
 
     }
@@ -118,13 +118,12 @@ export default {
 
       let teamQuery = this.$route.params.id
       self.path = teamQuery
-      if (teamQuery == 'team') {
+      if (teamQuery === 'team') {
         searchQ = {'team': teamName}
-        self.teamActive = true;
-      }
-      else if (teamQuery == 'user') {
+        self.teamActive = true
+      } else if (teamQuery === 'user') {
         searchQ = {'email': this.profile.name}
-        self.userActive = true;
+        self.userActive = true
       }
 
       axios.get('https://api.mlab.com/api/1/databases/standup/collections/stash',

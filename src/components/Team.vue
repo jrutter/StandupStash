@@ -28,7 +28,7 @@
                     <div class="form-group">
                       <input type="text" class="form-control" v-model="team" placeholder="Enter Team Name">
                     </div>
-                    <a href="#" class="btn btn-primary">Save</a>
+                    <a href="#" class="btn btn-primary" v-on:click="saveStatus()">Save</a>
                   </div>
                 </div>
               </div>
@@ -48,8 +48,11 @@
 
 <script>
 
-import axios from 'axios'
 import NavBar from '@/components/Nav'
+import auth0 from 'auth0-js'
+import EventEmitter from 'eventemitter3'
+
+
 
 export default {
   name: 'Team',
@@ -60,7 +63,7 @@ export default {
   data () {
     return {
       items: [],
-      team: 'hi',
+      team: '',
     }
   },
   mounted: function () {
@@ -68,32 +71,32 @@ export default {
   },
   methods: {
     loadProfile: function () {
-      let getProfile = localStorage.getItem('userProfile')
-      let profileObj = JSON.parse(getProfile)
-      console.log('prof', profileObj)
-      this.profile = profileObj
-      this.email = profileObj.name
-      this.name = profileObj.nickname
+
+      // this.profile = profileObj
     },
     saveStatus: function () {
       var self = this
-      var apiKey = 'lAsBHd1474tcG5UNO_KlBFCb5nUWEtt-'
+      let getProfile = localStorage.getItem('userProfile')
+      let profileObj = JSON.parse(getProfile)
+      let tokenID = localStorage.getItem('id_token')
 
-      axios.post('https://api.mlab.com/api/1/databases/standup/collections/stash?apiKey=' + apiKey,
-        {
-          name: self.name,
-          email: self.email,
-          today: self.today,
-          yesterday: self.yesterday,
-          blocker: self.blocker,
-          created_at: Date.now()
+      var auth0Manage = new auth0.Management({
+        domain: 'onerutter.auth0.com',
+        token: ""
+      })
 
-        }).then(function (response) {
-          self.entries = response.data
-          self.$router.push('/log')
-        }).catch(function (error) {
-          console.log(error)
-        })
+      auth0Manage.getUser(profileObj.sub, function (err, profile) {
+        if (profile) {
+          // let this.userProfile = profile;
+          console.log('profile', profile)
+        } else {
+          console.log('err', err)
+        }
+      })
+
+      // auth0Manage.getUser(userId, cb);
+
+
     }
   }
 }

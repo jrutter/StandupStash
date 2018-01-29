@@ -54,7 +54,7 @@
 
               <input type="hidden" v-model="name">
               <input type="hidden" v-model="email">
-              <input type="text" v-model="team">
+              <input type="hidden" v-model="team">
 
 
             <div class="input-group">
@@ -133,7 +133,6 @@ export default {
     loadProfile: function () {
       let getProfile = localStorage.getItem('userProfile')
       let profileObj = JSON.parse(getProfile)
-      console.log('pr', profileObj)
       this.profile = profileObj
       this.email = profileObj.name
       this.name = profileObj.nickname
