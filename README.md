@@ -29,3 +29,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 Helpful Articles:
 * https://www.slightedgecoder.com/2017/09/09/passing-api-key-heroku-node-application/
+* https://auth0.com/blog/building-and-authenticating-nodejs-apps/
+* https://www.codementor.io/olatundegaruba/5-steps-to-authenticating-node-js-with-jwt-7ahb5dmyr

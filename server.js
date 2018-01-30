@@ -1,10 +1,14 @@
 var express = require('express');
 var path = require('path');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
 var serveStatic = require('serve-static');
 var history = require('connect-history-api-fallback');
 
 
 app = express();
+app.use(bodyParser.json());
 
 app.use(history({
 // verbose: true

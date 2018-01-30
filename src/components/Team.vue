@@ -51,6 +51,7 @@
 import NavBar from '@/components/Nav'
 import auth0 from 'auth0-js'
 import EventEmitter from 'eventemitter3'
+import axios from 'axios'
 
 
 
@@ -67,12 +68,47 @@ export default {
     }
   },
   mounted: function () {
-    this.loadProfile()
+    this.getToken()
   },
   methods: {
     loadProfile: function () {
 
       // this.profile = profileObj
+    },
+    getToken: function () {
+
+      axios({
+        method: 'post',
+        url: 'https://onerutter.auth0.com/oauth/token',
+        headers: { 'content-type': 'application/json' },
+        data: {
+          grant_type: 'client_credentials',
+          client_id: 'sZKMo3vwdiKRxiMPAi0yTt9SdFzs0soW',
+          client_secret: 'xw8S5_LUB-9bn-yU8RHQLgYs7afu2G9WxkPCfKomMYsJKmc48Ai-fklbL741ZmE7',
+          audience: 'https://onerutter.auth0.com/api/v2/'
+        }
+      }).then(function (response) {
+        console.log('response', response)
+      }).catch(function (error) {
+        console.log('error', error)
+      })
+
+
+      // axios.post('https://onerutter.auth0.com/oauth/token',
+      //   {
+      //     headers: { 'content-type': 'application/json' },
+      //     body: {
+      //       grant_type: 'client_credentials',
+      //       client_id: '0ccWtJI4unjRAEgULYPIXS-lo5twGlYh',
+      //       client_secret: '0nt2Z9tZ3B1Xcpm7pMfr9-xlcLBI704NwyAUBUs6BIjoBUVk4l2HVvhH7DmWsqT8',
+      //       audience: 'https://onerutter.auth0.com/api/v2/'
+      //     },
+      //   }).then(function (response) {
+      //     console.log('response', response)
+      //   }).catch(function (error) {
+      //     console.log('error', error)
+      //   })
+
     },
     saveStatus: function () {
       var self = this
