@@ -1,21 +1,43 @@
-var express = require('express');
-var path = require('path');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+'use strict';
 
-var serveStatic = require('serve-static');
-var history = require('connect-history-api-fallback');
+const Hapi = require('hapi');
+const Inert = require('inert');
 
+// Create a server with a host and port
+const server = Hapi.server({
+    host: 'localhost',
+    port: 8000
+});
 
-app = express();
-app.use(bodyParser.json());
+// Add the route
+server.route({
+    method: 'GET',
+    path:'/hello',
+    handler: function (request, h) {
 
-app.use(history({
-// verbose: true
-}));
+        return 'hello world';
+    }
+});
 
-app.use(serveStatic(__dirname + "/dist"));
+const provision = async () => {
 
-var port = process.env.PORT || 5000;
-app.listen(port);
-console.log('server started '+ port);
+    await server.register(Inert);
+
+    server.route({
+        method: 'GET',
+        path: '/{param*}',
+        handler: {
+            directory: {
+                path: '.',
+                redirectToSlash: true,
+                index: true,
+            }
+        }
+    });
+
+    await server.start();
+
+    console.log('Server running at:', server.info.uri);
+};
+
+provision();
