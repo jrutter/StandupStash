@@ -1,26 +1,49 @@
 'use strict';
 
-var Hapi = require('hapi');
+const Hapi = require('hapi');
+const Inert = require('inert');
+const Path = require('path');
 
-const server = new Hapi.Server();
-var serverPort = process.env.PORT || 8080;
+// const server = new Hapi.Server();
+// var serverPort = process.env.PORT || 8080;
 
-server.connection({
-		port: serverPort
-	});
+const server = Hapi.server({
+    port: process.env.PORT || 8080,
+    routes: {
+        files: {
+            relativeTo: Path.join(__dirname, '/dist')
+        }
+    }
+});
 
 server.route({
     method: 'GET',
-    path: '/hello',
-    handler: function (request, reply) {
-        reply('Hello, world!');
+    path:'/hello',
+    handler: function (request, h) {
+
+        return 'hello world';
     }
 });
 
-server.start((err) => {
+const startServer = async () => {
 
-    if (err) {
-        throw err;
-    }
-    console.log(`Server running at: ${server.info.uri}`);
-});
+    await server.register(Inert);
+
+    server.route({
+        method: 'GET',
+        path: '/{param*}',
+        handler: {
+            directory: {
+                path: '.',
+                redirectToSlash: true,
+                index: true,
+            }
+        }
+    });
+
+    await server.start();
+
+    console.log('Server running at:', server.info.uri);
+};
+
+startServer();
