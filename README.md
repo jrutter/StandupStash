@@ -32,3 +32,7 @@ Helpful Articles:
 * https://auth0.com/blog/building-and-authenticating-nodejs-apps/
 * https://www.codementor.io/olatundegaruba/5-steps-to-authenticating-node-js-with-jwt-7ahb5dmyr
 * https://auth0.com/docs/api/management/v2/tokens
+* https://github.com/Belar/hapi-vue/blob/master/template/app.js
+* https://github.com/hapijs/inert#static-file-server
+* https://futurestud.io/tutorials/hapi-multi-segment-wildcard-path-parameters
+* https://hapijs.com/tutorials/routing

@@ -15,17 +15,17 @@ const provision = async () => {
 
     await server.register(Inert);
 
-    // server.route({
-    //     method: 'GET',
-    //     path: '/{param*}',
-    //     handler: {
-    //         directory: {
-    //             path: '.',
-    //             redirectToSlash: true,
-    //             index: true,
-    //         }
-    //     }
-    // });
+    server.route({
+        method: 'GET',
+        path: '/{param*}',
+        handler: {
+            directory: {
+                path: '.',
+                redirectToSlash: true,
+                index: true,
+            }
+        }
+    });
 
     // Example api call
     server.route({
@@ -35,14 +35,6 @@ const provision = async () => {
         return {
           message: 'Hello!'
         };
-      }
-    });
-
-    server.route({
-      method: 'GET',
-      path: '/{path*}',
-      handler: {
-        file: './dist/index.html'
       }
     });
 
