@@ -2,13 +2,14 @@
 
 const Hapi = require('hapi');
 const Inert = require('inert');
+const Path = require('path');
 
 // Create a server with a host and port
 const server = Hapi.server({
     port: 8000,
     routes: {
         files: {
-            relativeTo: Path.join(__dirname, 'dist')
+            relativeTo: Path.join(__dirname, '/dist')
         }
     }
 });
