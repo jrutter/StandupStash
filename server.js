@@ -6,7 +6,7 @@ const server = new Hapi.Server({
     port: process.env.PORT || 8080,
     routes: {
         files: {
-            relativeTo: Path.join(__dirname, 'public')
+            relativeTo: Path.join(__dirname, 'dist')
         }
     }
 });
