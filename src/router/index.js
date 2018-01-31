@@ -12,7 +12,7 @@ import Team from '@/components/Team'
 Vue.use(Router)
 
 export const routesArray = {
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',
