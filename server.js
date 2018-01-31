@@ -2,7 +2,8 @@
 
 var Hapi = require('hapi');
 
-var server = new Hapi.Server(+process.env.PORT, '0.0.0.0');
+var port = process.env.PORT || 5000;
+var server = new Hapi.Server(port, '0.0.0.0');
 
 server.route({
     method: 'GET',
