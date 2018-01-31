@@ -5,8 +5,12 @@ const Inert = require('inert');
 
 // Create a server with a host and port
 const server = Hapi.server({
-    host: 'localhost',
-    port: 8000
+    port: 8000,
+    routes: {
+        files: {
+            relativeTo: Path.join(__dirname, 'dist')
+        }
+    }
 });
 
 // Add the route
