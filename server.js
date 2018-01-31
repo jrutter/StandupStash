@@ -15,16 +15,35 @@ const provision = async () => {
 
     await server.register(Inert);
 
+    // server.route({
+    //     method: 'GET',
+    //     path: '/{param*}',
+    //     handler: {
+    //         directory: {
+    //             path: '.',
+    //             redirectToSlash: true,
+    //             index: true,
+    //         }
+    //     }
+    // });
+
+    // Example api call
     server.route({
-        method: 'GET',
-        path: '/{param*}',
-        handler: {
-            directory: {
-                path: '.',
-                redirectToSlash: true,
-                index: true,
-            }
-        }
+      method: 'GET',
+      path: '/api/call',
+      handler: function (request, h) {
+        return {
+          message: 'Hello!'
+        };
+      }
+    });
+
+    server.route({
+      method: 'GET',
+      path: '/{path*}',
+      handler: {
+        file: './dist/index.html'
+      }
     });
 
     await server.start();
