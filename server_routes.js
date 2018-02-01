@@ -3,9 +3,12 @@ var app = express();
 var router = express.Router();
 
 
-router.get('/', (req, res) => {
-  res.json(BlogPosts.get());
+router.get('/api', (req, res) => {
+  res.json('test');
 });
+
+module.exports = router;
+
 
 // // Require Item model in our routes module
 // // var Item = require('../models/Item');

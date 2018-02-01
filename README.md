@@ -36,3 +36,7 @@ Helpful Articles:
 * https://github.com/hapijs/inert#static-file-server
 * https://futurestud.io/tutorials/hapi-multi-segment-wildcard-path-parameters
 * https://hapijs.com/tutorials/routing
+* https://codeburst.io/vuejs-nodejs-tutorial-example-from-scratch-5a8ba947fa22
+* https://cherubini.casa/vue-js-and-express-can-they-live-together-c17d48bc41b7
+* https://medium.com/@bradfmd/vue-js-setting-up-auth0-6eb26cbbc48a
+* https://auth0.com/blog/create-an-app-in-vuejs-2/
