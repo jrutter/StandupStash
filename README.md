@@ -40,3 +40,7 @@ Helpful Articles:
 * https://cherubini.casa/vue-js-and-express-can-they-live-together-c17d48bc41b7
 * https://medium.com/@bradfmd/vue-js-setting-up-auth0-6eb26cbbc48a
 * https://auth0.com/blog/create-an-app-in-vuejs-2/
+
+Day 34:
+https://appdividend.com/2017/08/04/vuejs-nodejs-tutorial/
+https://router.vuejs.org/en/essentials/getting-started.html
