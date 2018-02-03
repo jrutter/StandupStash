@@ -61,10 +61,6 @@ export const routesArray = {
       name: 'My Profile',
       component: Profile,
       meta: 'active'
-    },
-    {
-      path: '*',
-      redirect: '/'
     }
   ]
 }
