@@ -1,4 +1,6 @@
 To Do
+# Setup API for Auth0 Management API using server side express
+# Hook up vuejs to expose profile information
 # Setup another dev server to push code to to test.
 
 Done
