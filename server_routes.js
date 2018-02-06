@@ -1,9 +1,10 @@
 var express = require('express');
 var app = express();
-var itemRoutes = express.Router();
+var router = express.Router();
 
-itemRoutes.get('/api', (req, res) => {
+
+router.get('/test', (req, res) => {
   res.json('test');
 });
 
-module.exports = itemRoutes;
+module.exports = router;

@@ -6,6 +6,7 @@ To Do
 Done
 # Figure out why it's breaking on the server
 - It was the order in which the routes were setup in the server.
+# History mode seems to be causing an issue with routing in expressjs. Need to find a solution to that one...
 
 Helpful Links:
 * https://help.github.com/articles/changing-a-remote-s-url/

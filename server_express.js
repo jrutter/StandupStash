@@ -11,11 +11,11 @@ var history = require('connect-history-api-fallback');
 const app = express();
 
 app.use(bodyParser.json());
-app.use(history({
-// verbose: true
-}));
+// app.use(history({
+// // verbose: true
+// }));
 app.use(cors());
-app.use('/profile', profileRoutes);
+app.use('/api', profileRoutes);
 
 app.use(express.static('dist'));
 
