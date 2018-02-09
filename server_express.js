@@ -12,9 +12,13 @@ app.use(bodyParser.json());
 app.use(history());
 app.use(cors());
 
-app.use('/', profileRoutes);
+// app.use('/', profileRoutes);
 
 app.use(express.static('dist'));
+
+app.get('/test', function(req, res) {
+  res.send('Main Home');
+})
 
 
 var port = process.env.PORT || 5000;
