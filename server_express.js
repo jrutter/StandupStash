@@ -11,7 +11,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(history());
 app.use(cors());
-app.use('/api', profileRoutes);
+
+app.use('/', profileRoutes);
 
 app.use(express.static('dist'));
 
