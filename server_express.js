@@ -6,14 +6,10 @@ var profileRoutes = require('./server_routes');
 
 var history = require('connect-history-api-fallback');
 
-
-
 const app = express();
 
 app.use(bodyParser.json());
-// app.use(history({
-// // verbose: true
-// }));
+app.use(history());
 app.use(cors());
 app.use('/api', profileRoutes);
 
