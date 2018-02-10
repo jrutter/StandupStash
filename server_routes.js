@@ -1,10 +1,10 @@
 var express = require('express');
 var app = express();
-var router = express.Router();
+var serverRoutes = express.Router();
 
 
-router.get('/api', (req, res) => {
+serverRoutes.get('/test', (req, res) => {
   res.json('test');
 });
 
-module.exports = router;
+module.exports = serverRoutes;
