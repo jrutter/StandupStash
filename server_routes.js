@@ -1,10 +1,9 @@
 var express = require('express');
-var app = express();
-var serverRoutes = express.Router();
+var router = express.Router();
 
-
-serverRoutes.get('/test', (req, res) => {
-  res.json('test');
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
 });
 
-module.exports = serverRoutes;
+module.exports = router;
