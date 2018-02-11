@@ -26,3 +26,7 @@ Helpful Links:
 Day 34:
 https://appdividend.com/2017/08/04/vuejs-nodejs-tutorial/
 https://router.vuejs.org/en/essentials/getting-started.html
+
+Day 43:
+* https://developer.okta.com/blog/2017/09/14/lazy-developers-guide-to-auth-with-vue
+* https://dzone.com/articles/vuejs-2-authentication-tutorial-part-2
